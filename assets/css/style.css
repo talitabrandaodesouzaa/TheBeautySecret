@@ -7,85 +7,102 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --text-primary: #000;
     --text-secundary: #000;
     --font-heading: 'Poppins';
     --font-default: 'Montserrat';
-    font-size: 62.5%; /* 10/16 */
+    font-size: 62.5%;
+    /* 10/16 */
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
-body{
+
+body {
     font-family: var(--font-default);
 }
-.loader{
+
+.loader {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    
+
 }
-.spin{
+
+.spin {
     height: 120 px;
     width: 120 px;
     border-radius: 50%;
-    border: 10px solid red;
+    border: 10px solid rgb(128, 73, 42);
     border-top: 10 px solid pink;
     animation: spin 2s linear infinite;
 
 }
+
 .hiden {
     display: none;
 }
+
 @keyframes spin {
-    0%{
-    transform: rotate(0);
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
-    100%{
-    transform: rotate(360deg);
-}
-}  
-#hamburguer{
+
+#hamburguer {
     position: fixed;
     right: 2rem;
     top: 2rem;
     height: 3rem;
     width: 3rem;
 }
-#hamburguer .linha{
+
+#hamburguer .linha {
     height: .5rem;
     width: 100%;
-    background-color: #F4A460;
+    background-color: #bd6110;
     box-shadow: 0 .2rem .2rem #000;
 }
+
 nav {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    background-color: #F4A460;
+    background-color: #b96e2d;
     height: 100vh;
     width: 20rem;
     z-index: 10;
     right: -20rem;
     transition: right 1s;
 }
-.menu-show{
+
+.menu-show {
     right: 0;
 }
-nav li{
+
+nav li {
     list-style: none;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     font-size: 1.6rem;
     color: var(--text-secundary);
 }
-nav a:hover{
+
+nav a:hover {
     color: #A0522D;
 }
+
 header {
     display: flex;
     flex-direction: column;
@@ -96,12 +113,14 @@ header {
     padding-left: 7rem;
     color: var(--text-primary);
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 }
+
 header h1 {
     font-size: clamp(3rem, 5vw, 5rem);
 }
-header::before{
+
+header::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -114,47 +133,61 @@ header::before{
     background-size: cover;
     animation: zoom 5s;
 }
+
 @keyframes zoom {
     0% {
         transform: scale(1.5);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
-h1, h2, h3, h4 {
+
+h1,
+h2,
+h3,
+h4 {
     font-weight: 900;
     font-family: var(--font-heading);
 }
-h1{
+
+h1 {
     font-size: 5rem;
 }
-h2{
+
+h2 {
     font-size: 3rem;
 }
+
 span {
     font-size: 4rem;
 }
-p{
+
+p {
     font-size: 2rem;
 }
+
 .botao {
     color: #FFF;
     font-size: 1.9rem;
     text-decoration: none;
-    background: linear-gradient(90deg, #A0522D  , #F4A460);
-    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #A0522D, #F4A460);
+    padding: 1rem 1rem;
     border-radius: 7px;
     text-align: center;
 }
-.botao:hover{
+
+.botao:hover {
     opacity: .8;
 }
+
 #avatar {
     border-radius: 50%;
     height: 300px;
     width: 300px;
 }
+
 /* flex box */
 section {
     display: flex;
@@ -169,53 +202,62 @@ div {
     justify-content: space-between;
     align-items: flex-start;
 }
-#secao-apresentacao{
-    background: linear-gradient(90deg, #f5e1ce  , #e8c39e);
+
+#secao-apresentacao {
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
+    text-align: justify;
 }
-#secao-projetos{
+
+#secao-projetos {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, #f5e1ce  , #e8c39e);
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
 }
-#secao-projetos ul{
+
+#secao-projetos ul {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
     color: var(--text-primary);
 }
-#secao-projetos li{
+
+#secao-projetos li {
     list-style: none;
 }
+
 .card {
-  
-  border-radius: 50%;
-  height: 250px;
- width: 250px;
-  position: relative;
-  cursor: pointer;
-}
-.card-img-wrapper {
-    
+
     border-radius: 50%;
     height: 250px;
     width: 250px;
-    
+    position: relative;
+    cursor: pointer;
+}
+
+.card-img-wrapper {
+
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+
 
 }
+
 .card-img-wrapper img {
-   
+
     border-radius: 50%;
     object-fit: cover;
     height: 250px;
     width: 250px;
     border-radius: 1 rem;
-    opacity: 0.8;
     transition: opacity 0.3s;
 }
+
 .card:hover .card-img-wrapper img {
-    opacity: 0.5;
+    opacity: 0.2;
 }
+
 .card-text {
     position: absolute;
     bottom: -2rem;
@@ -224,50 +266,78 @@ div {
     text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.6);
     transition: all 0.3s;
 }
+
 .card:hover .card-text {
     opacity: 1;
     bottom: 0;
 }
-#secao-projetos h3{
+
+#secao-projetos h3 {
     font-family: var(--font-default);
     font-weight: 700;
     font-size: 2rem;
     line-height: 3.3rem;
-    color: #A0522D;
-}
-#secao-projetos p{
-    font-size: 1.5rem;
-}
-#secao-txtorcamento{
-    background: linear-gradient(90deg, #f5e1ce  , #e8c39e);
+    color: #612307;
 }
 
-#secao-orcamento{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height:100vh;
-  background-image: url('https://img.freepik.com/fotos-premium/close-up-de-maquiagem-de-produtos-cosmeticos-bege-neutro-e-oleo-de-espuma-de-po-de-creme-de-beleza-branco-isolado-no-fundo-branco-conceito-de-mercadoria-de-marca-de-beleza-minimalista_408798-10567.jpg?w=2000');
-  background-size: cover;
+#secao-projetos p {
+    font-size: 1.5rem;
+    text-align: justify;
 }
-#secao-orcamento form{
-  display: grid;
-  row-gap: 1.5rem;
-  font-size: 2.5rem;
-  justify-items: start;
-  grid-template-columns: 1fr auto;
-  background-color: #FFF9;
-  backdrop-filter: blur(2px);
-  border-radius: 10px;
-  padding: 4rem;
-  }
-#secao-orcamento form h3{
-  background-color: #A0522D;
-  color: var(--text-primary);
-  position: absolute;
-  top: -10%;
-  padding: 1rem 3rem;
-  border-radius: 10px;
+
+#secao-txtorcamento {
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
+    text-align: justify;
+}
+
+#maquiagem {
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
+    text-align: justify;
+}
+
+#cabelo {
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
+    text-align: justify;
+}
+
+#autocuidado {
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
+    text-align: justify;
+}
+
+#unhas {
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
+    text-align: justify;
+}
+
+#secao-orcamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/fotos-gratis/fundo-com-ingredientes-naturais-para-a-preparacao-de-uma-mascara-para-cuidar-da-pele-preparacao-de-uma-mascara-de-po_169016-12980.jpg?w=826&t=st=1681334199~exp=1681334799~hmac=f583d09cef8e5f09e4f95c52331316cd1913e790e4fbc9fff1232398912d962c');
+    background-size: cover;
+}
+
+#secao-orcamento form {
+    display: grid;
+    row-gap: 1.5rem;
+    font-size: 2.5rem;
+    justify-items: start;
+    grid-template-columns: 1fr auto;
+    background-color: #FFF9;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    padding: 4rem;
+}
+
+#secao-orcamento form h3 {
+    background-color: #c2683f;
+    color: var(--text-primary);
+    position: absolute;
+    top: -10%;
+    padding: 1rem 3rem;
+    border-radius: 10px;
 }
 
 .input-group {
@@ -279,8 +349,7 @@ div {
 }
 
 input[type=text],
-input[type=number]
-{
+input[type=number] {
     font-size: 2rem;
     outline: none;
     padding: 1rem;
@@ -288,39 +357,42 @@ input[type=number]
     border: 0;
 }
 
-#secao-orcamento form output{
-  grid-column: 2;
+#secao-orcamento form output {
+    grid-column: 2;
 }
-@media (width <= 890px) {
-    #secao-projetos ul{
+
+@media (width <=890px) {
+    #secao-projetos ul {
         flex-direction: column;
     }
-    #secao-orcamento form{
+
+    #secao-orcamento form {
         display: flex;
         flex-direction: column;
     }
 }
 
-@media (width < 768px){
-    .only-large  {
+@media (width < 768px) {
+    .only-large {
         display: none;
     }
 }
 
 /* Estilos para o rodapé */
 footer {
-    background: linear-gradient(90deg, #9e6730, #804000);
+    background: linear-gradient(90deg, #f5e1ce, #e8c39e);
     padding: 10px;
     color: var(--text-primary);
 }
+
 .container {
-    max-width:max-content;
+    max-width: max-content;
     margin: auto;
 }
 
 .row {
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -350,5 +422,5 @@ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 12px;
-    
+
 }
