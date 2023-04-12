@@ -1,1 +1,1 @@
-# TheBeautySecret
+# TheBeauty
